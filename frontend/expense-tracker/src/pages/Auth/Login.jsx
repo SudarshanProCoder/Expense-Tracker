@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import AuthLayout from "../../components/layouts/AuthLayout";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
+import { validateEmail } from "../../utils/helper";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -10,7 +11,24 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {};
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    if (!validateEmail(email)) {
+      setError("Please enter the a valid email address. ");
+      return;
+    }
+
+    if (!password) {
+      setError("please enter the password.");
+      return;
+    }
+
+    setError("");
+
+    //Login API call;
+  };
+
   return (
     <AuthLayout>
       <div className="lg:w-[70%] h-3/4 md:h-full flex flex-col justify-center">
@@ -27,6 +45,25 @@ function Login() {
             placeholder="email@example.com"
             type="text"
           />
+          <Input
+            value={password}
+            onChange={({ target }) => setPassword(target.value)}
+            label="Password"
+            placeholder="Min 8 Characters"
+            type="password"
+          />
+
+          {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
+
+          <button className="btn-primary" type="submit">
+            LOGIN
+          </button>
+          <p className="text-[13px] text-slate-800 mt-3 ">
+            Don't have an account?{" "}
+            <Link className="font-medium text-primary underline" to="/signUp">
+              SignUp
+            </Link>
+          </p>
         </form>
       </div>
     </AuthLayout>

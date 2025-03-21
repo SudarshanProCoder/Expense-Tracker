@@ -10,10 +10,10 @@ function AuthLayout({ children }) {
         {children}
       </div>
 
-      <div className="hidden md:block w-[60vw] h-screen bg-green-50 bg-auth-bg-img bg-cover bg-no-repeat bg-center overflow-hidden p-8 relative">
-        <div className="w-48 h-48 rounded-[40px] bg-green-600 absolute -top-7 -left-5" />
-        <div className="w-48 h-56 rounded-[40px] border-[20px] border-green-600 absolute top-[30%] -right-10" />
-        <div className="w-48 h-48 rounded-[40px] bg-green-600 absolute -bottom-7 -left-5" />
+      <div className="hidden md:block w-[60vw] h-screen bg-sky-50 bg-auth-bg-img bg-cover bg-no-repeat bg-center overflow-hidden p-8 relative">
+        <div className="w-48 h-48 rounded-[40px] bg-sky-600 absolute -top-7 -left-5" />
+        <div className="w-48 h-56 rounded-[40px] border-[20px] border-amber-400 absolute top-[30%] -right-10" />
+        <div className="w-48 h-48 rounded-[40px] bg-sky-600 absolute -bottom-7 -left-5" />
 
         <div className="gird grid-cols-1 z-20 relative">
           <StatsInfoCard
@@ -26,7 +26,7 @@ function AuthLayout({ children }) {
 
         <img
           src={EXPENSE_BANNER}
-          className="w-70 lg:w-[80%] absolute bottom-10 shadow-lg shadow-blue-400/15"
+          className="w-70 lg:w-[90%] absolute bottom-10 shadow-lg shadow-blue-400/15 rounded-xl"
         />
       </div>
     </div>
@@ -37,7 +37,7 @@ export default AuthLayout;
 
 const StatsInfoCard = ({ icon, label, value, color }) => {
   return (
-    <div className="flex gap-6 bg-white p-4 rounded-xl showdow-md shadow-green-400/10 border border-gray-200/50 z-10">
+    <div className="flex gap-6 bg-white p-4 rounded-xl showdow-md shadow-sky-400/10 border border-gray-200/50 z-10">
       <div
         className={`w-12 h-12 flex items-center justify-center text-[26px] text-white ${color} rounded-full drop-shadow-xl `}
       >
@@ -46,7 +46,7 @@ const StatsInfoCard = ({ icon, label, value, color }) => {
 
       <div>
         <h6 className="text-xs text-gray-500 mb-1">{label}</h6>
-        <span className="text-[20px]">value</span>
+        <span className="text-[20px]">{value}</span>
       </div>
     </div>
   );
