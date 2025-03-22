@@ -1,6 +1,4 @@
-const jwt = require("jsonwebtoken");
 const Income = require("../models/Income");
-const User = require("../models/User");
 const xlsx = require("xlsx");
 
 //Add Data in Income Collection

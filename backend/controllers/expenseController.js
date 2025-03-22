@@ -1,6 +1,3 @@
-const jwt = require("jsonwebtoken");
-const Income = require("../models/Income");
-const User = require("../models/User");
 const xlsx = require("xlsx");
 const Expense = require("../models/Expense");
 
