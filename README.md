@@ -1,3 +1,3 @@
 # Expense Tracker
 
-# Developers: Sudarshan Date
+# Developer: Sudarshan Date
