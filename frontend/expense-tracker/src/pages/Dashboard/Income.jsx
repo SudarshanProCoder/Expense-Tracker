@@ -21,6 +21,7 @@ function Income() {
   const deleteIncome = async (id) => {};
   //handle Download income details
   const handleDownloadIncomeDetails = async () => {};
+
   return (
     <DashboardLayout activeMenu="Income">
       <div className="my-5 mx-auto">
