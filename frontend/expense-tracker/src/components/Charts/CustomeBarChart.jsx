@@ -14,7 +14,7 @@ import {
 const CustomeBarChart = ({ data }) => {
   // function to alternate colors
   const getBarColor = (index) => {
-    return index % 2 === 0 ? "#875cf5" : "#cfbefb";
+    return index % 2 === 0 ? "#ff6900" : "#85a7ff";
   };
 
   const CustomeToolTip = ({ active, payload }) => {
