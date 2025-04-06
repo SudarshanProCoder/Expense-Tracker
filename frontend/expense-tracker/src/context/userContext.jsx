@@ -9,7 +9,7 @@ const UserProvider = ({ children }) => {
     setUser(userData);
   };
 
-  // function to clear user data (e.g, logout)
+  // Function to clear user data. This is typically used during logout or when the session expires to reset the user state.
   const clearUser = () => {
     setUser(null);
   };
