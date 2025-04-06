@@ -48,8 +48,13 @@ This is a simple Expense Tracker application that helps users manage their expen
    ```bash
    npm install
    ```
-7. Add MongoDB Atlas URL in .env file
-
+7. Add URLS in .env file
+   ```bash
+      PORT=8000
+      MONGO_URI=your_atlas_url
+      JWT_SECRET=your_jwt_key
+      CLIENT_URL=client_url
+   ```
 8. Start the application:
    ```bash
    npm run dev
