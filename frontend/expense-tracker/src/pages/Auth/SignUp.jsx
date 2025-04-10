@@ -75,7 +75,7 @@ function SignUp() {
 
   return (
     <AuthLayout>
-      <div className="lg:w-[100%] h-auto md:h-full mt-10 md:mt-0 flex flex-col justify-center ">
+      <div className="w-full h-auto md:h-full mt-10 md:mt-0 flex flex-col justify-center px-4">
         <h3 className="text-xl font-semibold text-black">Create an account</h3>
         <p className="text-xs text-slate-700 mt-[5px] mb-6">
           Join us today by entering your details below
@@ -84,6 +84,7 @@ function SignUp() {
         <form onSubmit={handleSignUp}>
           <ProfilePhotoSelector image={profilePic} setImage={setProfilePic} />
 
+          {/* Mobile view will stack inputs, medium and above will have 2 columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
               value={fullName}
@@ -99,7 +100,7 @@ function SignUp() {
               placeholder="email@example.com"
               type="text"
             />
-            <div className="col-span-2">
+            <div className="md:col-span-2">
               <Input
                 value={password}
                 onChange={({ target }) => setPassword(target.value)}
@@ -109,12 +110,14 @@ function SignUp() {
               />
             </div>
           </div>
+
           {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
 
-          <button className="btn-primary" type="submit">
+          <button className="btn-primary mt-4" type="submit">
             SIGN UP
           </button>
-          <p className="text-[13px] text-slate-800 mt-3 ">
+
+          <p className="text-[13px] text-slate-800 mt-3">
             Already have an account?{" "}
             <Link className="font-medium text-primary underline" to="/login">
               Login
