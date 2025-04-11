@@ -40,7 +40,7 @@ exports.getAllExpense = async (req, res) => {
 //delete expense data from database
 exports.deleteExpense = async (req, res) => {
   try {
-    await Expense.findOneAndDelete(req.params.id);
+    await Expense.findByIdAndDelete(req.params.id);
     res.status(200).json({ message: "Income Data deleted Successfully." });
   } catch (error) {
     res.status(500).json({ message: "Server Error." });
